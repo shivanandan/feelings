@@ -21,6 +21,11 @@
       align-items: center;
 
     }
+
+    .edit{
+      color:white;
+      font-size: 19px;
+    }
      .face{
       width:60px;
       height: 60px;
@@ -65,11 +70,13 @@ table td
     ></script>
 
 
-        <script src="/js/socket.io.slim.dev.js"></script>
-        <!-- <script defer src="http://localhost:5000/socket.io-client/dist/socket.io.js"></script> -->
+        <!-- <script src="/js/socket.io.slim.dev.js"></script> -->
+         <!-- <script src="/socket.io-client/dist/socket.io.js"></script> -->
+         <script src="/socket.io/socket.io.js"></script>
+
 
         <script type="text/javascript">
-           var socket = io('http://localhost:5000');
+           var socket = io();
            socket.on('summary', function(emotions){
                 // $('#messages').append($('<li>').text(msg));
                   console.log(emotions)

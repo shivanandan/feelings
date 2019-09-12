@@ -53,10 +53,8 @@ router.get('/dashboard', ensureAuthenticated, async (req, res) =>{
         return [...curr,...next]
       },[])
      .reduce(emotionSummary,{})
-      console.log(summary)
 
 
-      await pusher.trigger('notifications', 'post_updated', summary, req.headers['x-socket-id']);
 
 
     const {feeling} = req.user;
@@ -127,7 +125,6 @@ router.post('/capture', async (req, res) => {
 
 
   await User.findOne({ email: email }).then(user => {
-    console.log('length:'+ user.feeling.length)
     if (user) {
       console.log(mood, desc, user.email);
       //User.feeling.push({mood : parseInt(mood)});
