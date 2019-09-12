@@ -1,0 +1,140 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<a href="/user/Logout" class="btn btn-secondary">Logout</a>
+
+
+
+
+
+
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> How are you feeling?
+        </h1>
+
+          <% if (emotion.mood) { %>
+            <h1>Today Mood <%= emotion.mood %></h1>
+            <h3>Description: <%= emotion.desc %></h3>
+          <button  class="btn btn-secondary btn-block">
+               <a href="<%= /update/+ user.email %>">Edit</a>
+          </button>
+
+          <% } else { %>
+
+        <!-- <form id="capture-form"> -->
+        <form class="captureForm" action="">
+        <div class="emotion-list">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mood" id="exampleRadios1" value="1" >
+            <label class="form-check-label" for="exampleRadios1">
+              <img class="face" src="/images/neutral-face_1f610.png" alt="">
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mood" id="exampleRadios2" value="2" >
+            <label class="form-check-label" for="exampleRadios2">
+              <img class="face"  src="/images/pouting-face_1f621.png" alt="">
+
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mood" id="exampleRadios3" value="3" >
+            <label class="form-check-label" for="exampleRadios3">
+              <img class="face"  src="/images/smiling-face-with-open-mouth_1f603.png" alt="">
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mood" id="exampleRadios4" value="4" >
+            <label class="form-check-label" for="exampleRadios4">
+                <img class="face"  src="/images/smiling-face-with-smiling-eyes_1f60a.png" alt="">
+            </label>
+          </div>
+
+
+
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mood" id="exampleRadios6" value="5" >
+            <label class="form-check-label" for="exampleRadios6">
+                <img class="face"  src="/images/white-frowning-face_2639.png" alt="">
+            </label>
+          </div>
+
+        </div>
+
+             <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter email"
+            value="<%= user.email %>"
+          />
+          <div class="form-group">
+            <label for="name">Desc</label>
+            <input
+              type="text"
+              id="desc"
+              name="desc"
+              class="form-control"
+              placeholder="Enter desc"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Save !
+          </button>
+        </form>
+          <% } %>
+
+        
+
+        <div>
+          <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"> 
+              <img class="face" src="/images/neutral-face_1f610.png" alt="">
+      </th>
+      <th scope="col"> 
+              <img class="face"  src="/images/pouting-face_1f621.png" alt="">
+      </th>
+      <th scope="col"> 
+              <img class="face"  src="/images/smiling-face-with-open-mouth_1f603.png" alt="">
+      </th>
+      <th scope="col"> 
+                <img class="face"  src="/images/smiling-face-with-smiling-eyes_1f60a.png" alt="">
+      </th>
+      <th scope="col"> 
+                <img class="face"  src="/images/white-frowning-face_2639.png" alt="">
+      </th>
+    
+    </tr>
+  </thead>
+  <tbody>
+   <tr class="datarow">
+      <td class="one"> <%= summary["1"] %> </td>
+      <td class="two"><%= summary["2"] %> </td>
+      <td class="three"><%= summary["3"] %> </td>
+      <td class="four"><%= summary["4"] %> </td>
+      <td class="five"><%= summary["5"] %> </td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+  
+
+
